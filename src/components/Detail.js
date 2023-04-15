@@ -21,8 +21,7 @@ const Detail = ({ exerciseDetail }) => {
             icon: EquipmentImage,
             name: equipment,
         }
-    ]
-    console.log(extraDetail);
+    ];
     return (
         <Stack gap="60px" sx={{ flexDirection: { lg: 'row' }, p: '20px', alignItems: 'center' }}>
             <img src={gifUrl} alt={name} loading="lazy" className='detail-image' />

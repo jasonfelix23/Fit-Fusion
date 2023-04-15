@@ -1,14 +1,11 @@
 import React from 'react';
 import { Box, Stack, Typography, Button } from '@mui/material';
 
-import HeroBannerImage from "../assets/images/banner.png"
+import HeroBannerImage from "../assets/images/gym-3.png"
 
-const HeroBanner = () => {
-    return (
-        <Box sx={{
-            mt: { lg: "212px", sm: "70px" },
-            ml: { sm: "40px" }
-        }} position="relative" p="20px">
+const HeroBanner = ({ isHome }) => {
+    const displayContentForHome = (
+        <Box>
             <Typography color="#FF2625" fontSize="24px" fontWeight="600px">
                 This is fitness club
             </Typography>
@@ -23,6 +20,25 @@ const HeroBanner = () => {
             <Button variant="contained" color="error" href='#exercises'
                 sx={{ backgroundColor: "#FF2625", padding: "12px" }}
             >Explore Exercises</Button>
+        </Box>);
+    const displayContentForMyRoutine = (
+        <Box>
+            <Typography fontWeight={700}
+                sx={{ fontSize: { lg: "34px", sm: "20px" } }}
+                mb="23px" mt="20px">
+                "The only bad workout<br /> is the one that didn't happen."
+            </Typography>
+            <Typography color="#FF2625" fontSize="24px" fontWeight="600px" mb={10}>
+                Most effective routine
+            </Typography>
+        </Box>
+    );
+    return (
+        <Box sx={{
+            mt: { lg: "212px", sm: "70px" },
+            ml: { sm: "40px" }
+        }} position="relative" p="20px">
+            {isHome ? displayContentForHome : displayContentForMyRoutine}
             <Typography
                 fontSize="200px"
                 fontWeight="600"
@@ -32,7 +48,7 @@ const HeroBanner = () => {
                     display: { lg: "block", xs: "none" }
                 }}
             >
-                Exercises
+                {isHome ? `Exercises` : `Routine`}
             </Typography>
             <img src={HeroBannerImage} className='hero-banner-img' alt="banner" />
         </Box >

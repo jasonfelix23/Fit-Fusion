@@ -11,7 +11,7 @@ const Home = () => {
     console.log(bodyPart);
     return (
         <Box>
-            <HeroBanner />
+            <HeroBanner isHome={true} />
             <SearchExercises
                 setExercises={setExercises}
                 bodyPart={bodyPart}
