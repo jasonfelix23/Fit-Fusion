@@ -14,7 +14,7 @@ const WorkoutRoutine = () => {
     }
     return (
         <Box>
-            <Stack direction="row" spacing={2} justifyContent="space-around" mt={8} mb={8}>
+            <Stack direction="row" sx={{ gap: { lg: '110px', xs: "50px" } }} flexWrap="wrap" justifyContent="center" mt={8} mb={8}>
                 {routinedata.map((item, index) => (
                     <Button key={index} onClick={() => handleClick(index)} variant={index === day ? "contained" : "outlined"} color="error"
                         sx={{ backgroundColor: index === day ? "#FF2625" : "transparent", padding: "20px", borderRadius: "35%", fontWeight: "bold" }}
